@@ -25,6 +25,25 @@ class Search extends Component {
             });
     }
 
+    componentDidUpdate() {
+        const zip = this.state.zip;
+
+        if (zip >= 10000 && zip <= 20000) {
+            const API_URL = `http://ctp-zip-api.herokuapp.com/zip/${zip}`;
+
+            Axios.get(API_URL)
+            .then((response) => {
+                const data = response.data;
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        } else {
+            console.log("Invalid ZIP");
+        }
+    }
+
     handleChange = (e) => {
         this.setState({
           [e.target.name]: e.target.value
