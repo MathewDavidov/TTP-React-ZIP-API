@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Search from "./components/Search"
 import './App.css';
 
 class App extends Component {
@@ -7,8 +7,11 @@ class App extends Component {
     return (
       <>
         <div>
-          
+          <nav className="navbar navbar-dark bg-dark text-center">
+            <span className="navbar-text text-white">Zip Code Search</span>
+          </nav>
         </div>
+        <Search />
       </>
     )
   }
